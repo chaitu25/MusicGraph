@@ -1,2 +1,6 @@
 # MusicGraph
-KDE Project
+## Abstract -
+
+## 1.Data Collection-
+## 2.Data Uplifting -
+
