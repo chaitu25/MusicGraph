@@ -1,0 +1,95 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://data.example.org/>
+@prefix db: <http://dbpedia.org/ontology/> .
+
+<#GrammyAwardsForSongsTriples>	
+	rr:logicalTable [ rr:tableName "GrammySongs" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://data.example.org/song/award/{ID}" ;
+		rr:class mo:Award ;
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate dc:title ;
+		 rr:objectMap [ rr:column "GRAMMYAWARD" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate ex:awardedTo ;
+		rr:objectMap [
+			rr:column "ARTIST" ;
+			rr:class mo:MusicArtist ;
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:awardedFor ;
+		rr:objectMap [
+			rr:column "NAME" ;
+			rr:class mo:Track ;
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate dc:date;
+		rr:objectMap [
+			rr:column "GRAMMYYEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.
+
+<#GrammyAwardsForAlbumTriples>	
+	rr:logicalTable [ rr:tableName "GrammyAlbums" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://data.example.org/album/award/{ID}" ;
+		rr:class mo:Award ;
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate dc:title ;
+		 rr:objectMap [ rr:column "AWARD" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate ex:awardedTo ;
+		rr:objectMap [
+			rr:column "ARTIST" ;
+			rr:class mo:MusicArtist ;
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate ex:awardedFor ;
+		rr:objectMap [
+			rr:column "ALBUM" ;
+			rr:class db:Album ;
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate dc:date;
+		rr:objectMap [
+			rr:column "GRAMMYYEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.

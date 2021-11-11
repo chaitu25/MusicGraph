@@ -1,0 +1,69 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://data.example.org/>
+
+
+<#ArtistTripleMap>
+	rr:logicalTable [ rr:tableName "Artist"];
+	rr:subjectMap [
+		rr:template "http://data.example.org/Artist/{MBID}" ;
+		rr:class mo:MusicArtist ;
+	];
+	rr:predicateObjectMap [
+        rr:predicate foaf:name;
+        rr:objectMap [ rr:column "ARTIST_MB" ];
+    ];
+	rr:predicateObjectMap [
+        rr:predicate ex:country;
+        rr:objectMap [ rr:column "COUNTRY_MB" ];
+    ];
+	rr:predicateObjectMap [
+        rr:predicate ex:noOfListerns;
+        rr:objectMap [ rr:column "LISTENERS_LASTFM"];
+    ];
+	.
+	
+<#SpotifySongsTriples>
+	a rr:TriplesMap ;
+	
+	rr:logicalTable [ rr:tableName "spotify" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://data.example.org/song/{SONGID}" ;
+		rr:class mo:Track ;
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate dc:title ;
+		 rr:objectMap [ rr:column "TITLE" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate ex:sungBy ;
+		rr:objectMap [
+        rr:parentTriplesMap <#ArtistTripleMap>;
+        rr:joinCondition [
+            rr:child "ARTIST";
+            rr:parent "ARTIST_MB";
+        ];
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate dc:date;
+		rr:objectMap [
+			rr:column "YEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.
