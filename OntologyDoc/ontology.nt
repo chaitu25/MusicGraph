@@ -1,0 +1,295 @@
+<http://www.music.org/ontologies/music> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.music.org/ontologies/music> <http://www.w3.org/2000/01/rdf-schema#comment> "This ontology is an extension of existing music ontology created to represent information regarding the music such as artist , various songs and albums , typical properties of songs , information about grammy awards received by the particular songs/album." .
+<http://www.music.org/ontologies/music> <http://www.w3.org/2000/01/rdf-schema#label> "Ontology Of Music" .
+<http://www.music.org/ontologies/music> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://musicontology.com/> .
+<http://www.music.org/ontologies/music> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/ontology/mo/level
+<http://purl.org/ontology/mo/level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#gYear
+<http://www.w3.org/2001/XMLSchema#gYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/ontology/mo/member_of
+<http://purl.org/ontology/mo/member_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/ontology/mo/member_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.music.org/ontologies/music#member> .
+<http://purl.org/ontology/mo/member_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://purl.org/ontology/mo/member_of> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.music.org/ontologies/music#Instrumentalist> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.music.org/ontologies/music#Singer> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://purl.org/ontology/mo/member_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.music.org/ontologies/music#Band> .
+# 
+# http://www.music.org/ontologies/music#awardedFor
+<http://www.music.org/ontologies/music#awardedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#awardedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.music.org/ontologies/music#GrammyAward> .
+<http://www.music.org/ontologies/music#awardedFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/mo/MusicalManifestation> .
+# 
+# http://www.music.org/ontologies/music#awardedTo
+<http://www.music.org/ontologies/music#awardedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#awardedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.music.org/ontologies/music#GrammyAward> .
+<http://www.music.org/ontologies/music#awardedTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/mo/MusicArtist> .
+# 
+# http://www.music.org/ontologies/music#fromAlbum
+<http://www.music.org/ontologies/music#fromAlbum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#fromAlbum> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.music.org/ontologies/music#track> .
+<http://www.music.org/ontologies/music#fromAlbum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.music.org/ontologies/music#fromAlbum> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/Track> .
+<http://www.music.org/ontologies/music#fromAlbum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.music.org/ontologies/music#album> .
+# 
+# http://www.music.org/ontologies/music#genre
+<http://www.music.org/ontologies/music#genre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#genre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.music.org/ontologies/music#genre> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/ontology/mo/Track> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.music.org/ontologies/music#album> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.music.org/ontologies/music#genre> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/mo/Genre> .
+# 
+# http://www.music.org/ontologies/music#hasTrack
+<http://www.music.org/ontologies/music#hasTrack> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#hasTrack> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.music.org/ontologies/music#track> .
+# 
+# http://www.music.org/ontologies/music#member
+<http://www.music.org/ontologies/music#member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#member> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.music.org/ontologies/music#Band> .
+<http://www.music.org/ontologies/music#member> <http://www.w3.org/2000/01/rdf-schema#range> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.music.org/ontologies/music#Instrumentalist> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.music.org/ontologies/music#Singer> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# http://www.music.org/ontologies/music#sungBy
+<http://www.music.org/ontologies/music#sungBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#sungBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/Track> .
+<http://www.music.org/ontologies/music#sungBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/mo/MusicArtist> .
+# 
+# http://www.music.org/ontologies/music#track
+<http://www.music.org/ontologies/music#track> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.music.org/ontologies/music#track> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.music.org/ontologies/music#album> .
+<http://www.music.org/ontologies/music#track> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/mo/Track> .
+# 
+# http://xmlns.com/foaf/0.1/made
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/2002/07/owl#inverseOf> <http://xmlns.com/foaf/0.1/maker> .
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/MusicArtist> .
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/mo/MusicalManifestation> .
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/2000/01/rdf-schema#comment> "Something that was made by this agent." .
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/2000/01/rdf-schema#label> "made" .
+<http://xmlns.com/foaf/0.1/made> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+# 
+# http://xmlns.com/foaf/0.1/maker
+<http://xmlns.com/foaf/0.1/maker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/maker> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/MusicalManifestation> .
+<http://xmlns.com/foaf/0.1/maker> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/mo/MusicArtist> .
+<http://xmlns.com/foaf/0.1/maker> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent that  made this thing." .
+<http://xmlns.com/foaf/0.1/maker> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/maker> <http://www.w3.org/2000/01/rdf-schema#label> "maker" .
+<http://xmlns.com/foaf/0.1/maker> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.music.org/ontologies/music#acousticness
+<http://www.music.org/ontologies/music#acousticness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#acousticness> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/Track> .
+<http://www.music.org/ontologies/music#acousticness> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.music.org/ontologies/music#awardTitle
+<http://www.music.org/ontologies/music#awardTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#awardTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.music.org/ontologies/music#awardTitle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.music.org/ontologies/music#GrammyAward> .
+<http://www.music.org/ontologies/music#awardTitle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://www.music.org/ontologies/music#awardYear
+<http://www.music.org/ontologies/music#awardYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#awardYear> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.music.org/ontologies/music#GrammyAward> .
+<http://www.music.org/ontologies/music#awardYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+# 
+# http://www.music.org/ontologies/music#bpm
+<http://www.music.org/ontologies/music#bpm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#bpm> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/Track> .
+<http://www.music.org/ontologies/music#bpm> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.music.org/ontologies/music#country
+<http://www.music.org/ontologies/music#country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.music.org/ontologies/music#country> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/MusicArtist> .
+<http://www.music.org/ontologies/music#country> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://www.music.org/ontologies/music#dancability
+<http://www.music.org/ontologies/music#dancability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#dancability> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/Track> .
+<http://www.music.org/ontologies/music#dancability> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.music.org/ontologies/music#energy
+<http://www.music.org/ontologies/music#energy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#energy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/Track> .
+<http://www.music.org/ontologies/music#energy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.music.org/ontologies/music#instrumentalness
+<http://www.music.org/ontologies/music#instrumentalness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#instrumentalness> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/Track> .
+<http://www.music.org/ontologies/music#instrumentalness> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.music.org/ontologies/music#listeners
+<http://www.music.org/ontologies/music#listeners> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#listeners> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/MusicArtist> .
+<http://www.music.org/ontologies/music#listeners> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#long> .
+# 
+# http://www.music.org/ontologies/music#name
+<http://www.music.org/ontologies/music#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/mo/MusicArtist> .
+<http://www.music.org/ontologies/music#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://www.music.org/ontologies/music#title
+<http://www.music.org/ontologies/music#title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#title> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/ontology/mo/Track> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.music.org/ontologies/music#album> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.music.org/ontologies/music#title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://www.music.org/ontologies/music#year
+<http://www.music.org/ontologies/music#year> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.music.org/ontologies/music#year> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/ontology/mo/Track> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.music.org/ontologies/music#album> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.music.org/ontologies/music#year> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/ontology/mo/Genre
+<http://purl.org/ontology/mo/Genre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/mo/Genre> <http://purl.org/ontology/mo/level> "2" .
+<http://purl.org/ontology/mo/Genre> <http://www.w3.org/2000/01/rdf-schema#comment> "\n        An expressive style of music.\n        \n        Any taxonomy can be plug-in here. You can either define a genre by yourself, like this:\n\n        :mygenre a mo:Genre; dc:title \"electro rock\".\n\n        Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web\n        clients to access easily really detailed structured information about the genre you are refering to.\n    " .
+<http://purl.org/ontology/mo/Genre> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/ontology/mo/> .
+<http://purl.org/ontology/mo/Genre> <http://www.w3.org/2000/01/rdf-schema#label> "Genre" .
+<http://purl.org/ontology/mo/Genre> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+# 
+# http://purl.org/ontology/mo/MusicArtist
+<http://purl.org/ontology/mo/MusicArtist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/mo/MusicArtist> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://purl.org/ontology/mo/MusicArtist> <http://purl.org/ontology/mo/level> "1" .
+<http://purl.org/ontology/mo/MusicArtist> <http://www.w3.org/2000/01/rdf-schema#comment> "\n        A person or a group of people (or a computer :-) ), whose musical \n        creative work shows sensitivity and imagination \n    " .
+<http://purl.org/ontology/mo/MusicArtist> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/ontology/mo/> .
+<http://purl.org/ontology/mo/MusicArtist> <http://www.w3.org/2000/01/rdf-schema#label> "music artist" .
+<http://purl.org/ontology/mo/MusicArtist> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+# 
+# http://purl.org/ontology/mo/MusicalManifestation
+<http://purl.org/ontology/mo/MusicalManifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/mo/MusicalManifestation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocab/frbr/core#Manifestation> .
+<http://purl.org/ontology/mo/MusicalManifestation> <http://purl.org/ontology/mo/level> "1" .
+<http://purl.org/ontology/mo/MusicalManifestation> <http://www.w3.org/2000/01/rdf-schema#comment> "\n\nThis entity is related to the edition/production/publication of a musical expression (musical manifestation are closely related with the music industry (their terms, concepts, definitions, methods (production, publication, etc.), etc.)\n    \nFrom the FRBR final report: The entity defined as manifestation encompasses a wide range of materials, including manuscripts, books, periodicals, maps, posters, sound recordings, films, video recordings, CD-ROMs, multimedia kits, etc. As an entity, manifestation represents all the physical objects that bear the same characteristics, in respect to both intellectual content and physical form.\n\n\nWork #1 J. S. Bach's Six suites for unaccompanied cello\n\n    * Expression #1 sound issued during the performance by Janos Starker recorded in 1963 and 1965\n          o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1965 by Mercury\n          o Manifestation #2 recordings re-released on compact disc in 1991 by Mercury \n    * Expression #2 sound issued during the performances by Yo-Yo Ma recorded in 1983\n          o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1983 by CBS Records\n          o Manifestation #2 recordings re-released on compact disc in 1992 by CBS Records \n\n          \nChanges that occur deliberately or even inadvertently in the production process that affect the copies result, strictly speaking, in a new manifestation. A manifestation resulting from such a change may be identified as a particular \"state\" or \"issue\" of the publication.\n\nChanges that occur to an individual copy after the production process is complete (e.g., the loss of a page, rebinding, etc.) are not considered to result in a new manifestation. That copy is simply considered to be an exemplar (or item) of the manifestation that deviates from the copy as produced.\n\nWith the entity defined as manifestation we can describe the physical characteristics of a set of items and the characteristics associated with the production and distribution of that set of items that may be important factors in enabling users to choose a manifestation appropriate to their physical needs and constraints, and to identify and acquire a copy of that manifestation.\n\nDefining manifestation as an entity also enables us to draw relationships between specific manifestations of a work. We can use the relationships between manifestations to identify, for example, the specific publication that was used to create a microreproduction.          \n\n" .
+<http://purl.org/ontology/mo/MusicalManifestation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/ontology/mo/> .
+<http://purl.org/ontology/mo/MusicalManifestation> <http://www.w3.org/2000/01/rdf-schema#label> "musical manifestation" .
+<http://purl.org/ontology/mo/MusicalManifestation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+# 
+# http://purl.org/ontology/mo/Track
+<http://purl.org/ontology/mo/Track> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/mo/Track> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ontology/mo/MusicalManifestation> .
+<http://purl.org/ontology/mo/Track> <http://purl.org/ontology/mo/level> "1" .
+<http://purl.org/ontology/mo/Track> <http://www.w3.org/2000/01/rdf-schema#comment> "A track on a particular record" .
+<http://purl.org/ontology/mo/Track> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/ontology/mo/> .
+<http://purl.org/ontology/mo/Track> <http://www.w3.org/2000/01/rdf-schema#label> "track" .
+<http://purl.org/ontology/mo/Track> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+# 
+# http://purl.org/vocab/frbr/core#Manifestation
+<http://purl.org/vocab/frbr/core#Manifestation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.music.org/ontologies/music#Award
+<http://www.music.org/ontologies/music#Award> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.music.org/ontologies/music#Band
+<http://www.music.org/ontologies/music#Band> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.music.org/ontologies/music#Band> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ontology/mo/MusicArtist> .
+# 
+# http://www.music.org/ontologies/music#GrammyAward
+<http://www.music.org/ontologies/music#GrammyAward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.music.org/ontologies/music#GrammyAward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.music.org/ontologies/music#Award> .
+<http://www.music.org/ontologies/music#GrammyAward> <http://www.w3.org/2000/01/rdf-schema#comment> "Represent the specific instance of awards given to the musical work" .
+# 
+# http://www.music.org/ontologies/music#Instrumentalist
+<http://www.music.org/ontologies/music#Instrumentalist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.music.org/ontologies/music#Instrumentalist> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ontology/mo/MusicArtist> .
+# 
+# http://www.music.org/ontologies/music#Singer
+<http://www.music.org/ontologies/music#Singer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.music.org/ontologies/music#Singer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ontology/mo/MusicArtist> .
+# 
+# http://www.music.org/ontologies/music#album
+<http://www.music.org/ontologies/music#album> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.music.org/ontologies/music#album> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/ontology/mo/MusicalManifestation> .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
