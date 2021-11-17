@@ -1,0 +1,54 @@
+ID,X,GrammyAward,GrammyYear,Genre,Name,Artist,
+1,0,Record Of The Year,2018,General,this is America,Childish Gambino,1
+2,1,Song Of The Year,2018,General,this is America,Childish Gambino,1
+3,2,Best Pop Solo Performance,2018,Pop,Joanne (where Do you Think You're Goin'?),Lady Gaga,1
+6,5,Best Rock Performance,2018,Rock,when Bad Does Good,Chris Cornell,1
+13,12,Best Rap/Sung Performance,2018,Rap,this is America,Childish Gambino,1
+14,13,Best Rap Song,2018,Rap,God's Plan,Drake,1
+21,20,Best American Roots Performance,2018,American Roots Music,The Joke,Brandi Carlile,1
+22,21,Best American Roots Song,2018,American Roots Music,The Joke,Brandi Carlile,1
+24,23,Record Of The Year,2017,General,24k Magic,Bruno Mars,1
+25,24,Song Of The Year,2017,General,That's What i Like,Bruno Mars,1
+26,25,Best Pop Solo Performance,2017,Pop,Shape of you,Ed Sheeran,1
+29,28,Best Rock Performance,2017,Rock,you Want it Darker,Leonard Cohen,1
+32,31,Best R&B Performance,2017,R&B,That's What i Like,Bruno Mars,1
+33,32,Best Traditional R&B Performance,2017,R&B,Redbone,Childish Gambino,1
+34,33,Best R&B Song,2017,R&B,That's What i Like,Bruno Mars,1
+35,34,Best Rap Performance,2017,Rap,Humble.,Kendrick Lamar,1
+37,36,Best Rap Song,2017,Rap,Humble.,Kendrick Lamar,1
+47,46,Record Of The Year,2016,General,Hello,Adele,1
+48,47,Song Of The Year,2016,General,Hello,Adele,1
+49,48,Best Pop Solo Performance,2016,Pop,Hello,Adele,1
+52,51,Best Rock Performance,2016,Rock,Blackstar,David Bowie,1
+54,53,Best Rock Song,2016,Rock,Blackstar,David Bowie,1
+55,54,Best R&B Performance,2016,R&B,Cranes in the Sky,Solange,1
+57,56,Best R&B Song,2016,R&B,Lake by the Ocean,Maxwell,1
+59,58,Best Rap/Sung Performance,2016,Rap,Hotline Bling,Drake,1
+60,59,Best Rap Song,2016,Rap,Hotline Bling,Drake,1
+63,62,Best Country Song,2016,Country,Humble and Kind,Tim Mcgraw,1
+72,71,Best Pop Solo Performance,2015,Pop,Thinking Out Loud,Ed Sheeran,1
+81,80,Best Rap Performance,2015,Rap,Alright,Kendrick Lamar,1
+94,93,Best Pop Solo Performance,2014,Pop,Happy (Live),Pharrell Williams,1
+107,106,Best Country Song,2014,Country,I'm not Gonna Miss you,Glen Campbell,1
+113,112,Best Song Written For Visual Media,2014,Composing/Arranging,Let it Go,Idina Menzel,1
+127,126,Best Country Solo Performance,2013,Country,Wagon Wheel,Darius Rucker,1
+135,134,Best Pop Solo Performance,2012,Pop,Set Fire to the Rain [live],Adele,1
+140,139,Best R&B Performance,2012,R&B,Climax,Usher,1
+142,141,Best R&B Song,2012,R&B,Adorn,Miguel,1
+145,144,Best Country Solo Performance,2012,Country,Blown Away,Carrie Underwood,1
+147,146,Best Country Song,2012,Country,Blown Away,Carrie Underwood,1
+150,149,Record Of The Year,2011,General,Rolling in the Deep,Adele,1
+151,150,Song Of The Year,2011,General,Rolling in the Deep,Adele,1
+152,151,Best Pop Solo Performance,2011,Pop,Someone Like you,Adele,1
+157,156,Best R&B Performance,2011,R&B,Is this Love,Corinne Bailey Rae,1
+162,161,Best Country Solo Performance,2011,Country,Mean,Taylor Swift,1
+164,163,Best Country Song,2011,Country,Mean,Taylor Swift,1
+169,168,Best Female Pop Vocal Performance,2010,Pop,Bad Romance,Lady Gaga,1
+170,169,Best Male Pop Vocal Performance,2010,Pop,Just the Way you are,Bruno Mars,1
+173,172,Best Dance Recording,2010,Dance/Electronic Music,Only Girl (in the World),Rihanna,1
+177,176,Best Female R&B Vocal Performance,2010,R&B,Bittersweet,Fantasia,1
+178,177,Best Male R&B Vocal Performance,2010,R&B,There Goes My Baby,Usher,1
+179,178,Best R&B Performance By A Duo Or Group With Vocals,2010,R&B,Soldier of Love,Sade,1
+182,181,Best Rap Solo Performance,2010,Rap,Not Afraid,Eminem,1
+185,184,Best Female Country Vocal Performance,2010,Country,The House that Built Me,Miranda Lambert,1
+186,185,Best Male Country Vocal Performance,2010,Country,'Til Summer Comes Around,Keith Urban,1

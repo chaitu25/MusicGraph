@@ -1,56 +1,211 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix mo: <http://purl.org/ontology/mo/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ex: <http://data.example.org/> .
+@prefix music: <http://www.music.org/ontologies/music#>.
+@prefix mo: <http://purl.org/ontology/mo/> .
 
-
-<#ArtistTripleMap>
-	rr:logicalTable [ rr:tableName "Artist"];
+<#SingersTripleMap>
+	rr:logicalTable [ rr:tableName "MusicArtist"];
 	rr:subjectMap [
-		rr:template "http://data.example.org/Artist/{MBID}" ;
-		rr:class mo:MusicArtist ;
+		rr:template "http://www.music.org/Artist/{MBID}" ;
+		rr:class music:Singer ;
 	];
 	rr:predicateObjectMap [
         rr:predicate foaf:name;
         rr:objectMap [ rr:column "ARTIST_MB" ];
     ];
 	rr:predicateObjectMap [
-        rr:predicate ex:country;
+        rr:predicate music:country;
         rr:objectMap [ rr:column "COUNTRY_MB" ];
     ];
 	rr:predicateObjectMap [
-        rr:predicate ex:noOfListerns;
-        rr:objectMap [ rr:column "LISTENERS_LASTFM"];
+        rr:predicate music:listeners;
+        rr:objectMap [ rr:column "LISTENERS_LASTFM";
+			rr:datatype xsd:long;
+		];
+    ];
+	.
+
+<#MusicGroupTripleMap>
+	rr:logicalTable [ rr:tableName "MusicBand"];
+	rr:subjectMap [
+		rr:template "http://www.music.org/Artist/{MBID}" ;
+		rr:class music:Band ;
+	];
+	rr:predicateObjectMap [
+        rr:predicate music:name;
+        rr:objectMap [ rr:column "ARTIST_MB" ];
+    ];
+	rr:predicateObjectMap [
+        rr:predicate music:country;
+        rr:objectMap [ rr:column "COUNTRY_MB" ];
+    ];
+	rr:predicateObjectMap [
+        rr:predicate music:listeners;
+        rr:objectMap [ rr:column "LISTENERS_LASTFM";
+			rr:datatype xsd:long;
+		];
     ];
 	.
 	
-<#SpotifySongsTriples>
+<#SingersSpotifySongsTriples>
 	a rr:TriplesMap ;
-	
-	rr:logicalTable [ rr:tableName "spotify" ] ;
+	rr:logicalTable [ rr:tableName "Singersspotify" ] ;
 	
 	rr:subjectMap [
-		rr:template "http://data.example.org/song/{SONGID}" ;
+		rr:template "http://www.music.org/song/{SONGID}" ;
 		rr:class mo:Track ;
 	] ;
-	
 	rr:predicateObjectMap [
-		rr:predicate dc:title ;
+		rr:predicate music:title ;
 		 rr:objectMap [ rr:column "TITLE" ];
 	] ;
  	
 	rr:predicateObjectMap [
-		rr:predicate ex:sungBy ;
+		rr:predicate music:sungBy ;
 		rr:objectMap [
-        rr:parentTriplesMap <#ArtistTripleMap>;
+        rr:parentTriplesMap <#SingersTripleMap>;
         rr:joinCondition [
             rr:child "ARTIST";
             rr:parent "ARTIST_MB";
         ];
+    ];
+	] ;
+	rr:predicateObjectMap [
+		rr:predicate music:bpm ;
+		rr:objectMap [rr:column "BPM";
+		rr:datatype xsd:integer;
+		 ]; 
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:energy ;
+		rr:objectMap [rr:column "NRGY" ;
+		rr:datatype xsd:integer;
+		]; 
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:acousticness ;
+		rr:objectMap [rr:column "ACOUS";
+		rr:datatype xsd:integer;
+		 ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:dancability ;
+		rr:objectMap [rr:column "DNCE" ;
+		rr:datatype xsd:integer;
+		 ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:year;
+		rr:objectMap [
+			rr:column "YEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.
+<#BandSpotifySongsTriples>
+	a rr:TriplesMap ;
+	rr:logicalTable [ rr:tableName "BandSpotify" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://www.music.org/song/{SONGID}" ;
+		rr:class mo:Track ;
+	] ;
+	rr:predicateObjectMap [
+		rr:predicate music:title ;
+		 rr:objectMap [ rr:column "TITLE" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:sungBy ;
+		rr:objectMap [
+        rr:parentTriplesMap <#MusicGroupTripleMap>;
+        rr:joinCondition [
+            rr:child "ARTIST";
+            rr:parent "ARTIST_MB";
+        ];
+    ];
+	] ;
+	rr:predicateObjectMap [
+		rr:predicate music:bpm ;
+		rr:objectMap [rr:column "BPM" ;
+		rr:datatype xsd:integer;
+		]; 
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:energy ;
+		rr:objectMap [rr:column "NRGY" ;
+		rr:datatype xsd:integer;
+		]; 
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:acousticness ;
+		rr:objectMap [rr:column "ACOUS" ;
+		rr:datatype xsd:integer;
+		];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:dancability ;
+		rr:objectMap [rr:column "DNCE" ;
+		rr:datatype xsd:integer;
+		];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:year;
+		rr:objectMap [
+			rr:column "YEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.
+<#GrammyAwardsForSingerSongsTriples>	
+	rr:logicalTable [ rr:tableName "GrammySongsForSingers" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://www.music.org/song/award/{ID}" ;
+		rr:class music:GrammyAward ;
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardTitle ;
+		 rr:objectMap [ rr:column "GRAMMYAWARD" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedTo ;
+		rr:objectMap [
+        rr:parentTriplesMap <#SingersTripleMap>;
+        rr:joinCondition [
+            rr:child "ARTIST";
+            rr:parent "ARTIST_MB";
+        ];
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedFor ;
+		rr:objectMap [
+			rr:column "NAME" ;
+			rr:class mo:Track ;
     ];
 	] ;
 	
@@ -60,9 +215,145 @@
 	] ;
  	
 	rr:predicateObjectMap [
-		rr:predicate dc:date;
+		rr:predicate music:awardYear;
 		rr:objectMap [
-			rr:column "YEAR" ;
+			rr:column "GRAMMYYEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.
+
+<#GrammyAwardsForSingersAlbumTriples>	
+	rr:logicalTable [ rr:tableName "GrammyAlbumsForSinger" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://data.example.org/album/award/{ID}" ;
+		rr:class music:GrammyAward ;
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardTitle ;
+		 rr:objectMap [ rr:column "AWARD" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedTo ;
+		rr:objectMap [
+        rr:parentTriplesMap <#SingersTripleMap>;
+        rr:joinCondition [
+            rr:child "ARTIST";
+            rr:parent "ARTIST_MB";
+        ];
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedFor ;
+		rr:objectMap [
+			rr:column "ALBUM" ;
+			rr:class music:album ;
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:awardYear;
+		rr:objectMap [
+			rr:column "GRAMMYYEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.
+<#GrammyAwardsForBandSongsTriples>	
+	rr:logicalTable [ rr:tableName "GrammySongsForBand" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://www.music.org/song/award/{ID}" ;
+		rr:class music:GrammyAward ;
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardTitle ;
+		 rr:objectMap [ rr:column "GRAMMYAWARD" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedTo ;
+		rr:objectMap [
+        rr:parentTriplesMap <#MusicGroupTripleMap>;
+        rr:joinCondition [
+            rr:child "ARTIST";
+            rr:parent "ARTIST_MB";
+        ];
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedFor ;
+		rr:objectMap [
+			rr:column "NAME" ;
+			rr:class mo:Track ;
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:awardYear;
+		rr:objectMap [
+			rr:column "GRAMMYYEAR" ;
+			rr:datatype xsd:gYear;
+		] ; 
+	] ;
+	.
+<#GrammyAwardsForBandAlbumTriples>	
+	rr:logicalTable [ rr:tableName "GrammyAlbumsForBand" ] ;
+	
+	rr:subjectMap [
+		rr:template "http://data.example.org/album/award/{ID}" ;
+		rr:class music:GrammyAward ;
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardTitle ;
+		 rr:objectMap [ rr:column "AWARD" ];
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedTo ;
+		rr:objectMap [
+        rr:parentTriplesMap <#MusicGroupTripleMap>;
+        rr:joinCondition [
+            rr:child "ARTIST";
+            rr:parent "ARTIST_MB";
+        ];
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate music:awardedFor ;
+		rr:objectMap [
+			rr:column "ALBUM" ;
+			rr:class music:album ;
+    ];
+	] ;
+	
+	rr:predicateObjectMap [
+		rr:predicate mo:Genre ;
+		rr:objectMap [rr:column "GENRE" ]; 
+	] ;
+ 	
+	rr:predicateObjectMap [
+		rr:predicate music:awardYear;
+		rr:objectMap [
+			rr:column "GRAMMYYEAR" ;
 			rr:datatype xsd:gYear;
 		] ; 
 	] ;

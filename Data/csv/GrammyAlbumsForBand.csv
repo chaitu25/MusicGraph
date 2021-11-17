@@ -1,0 +1,95 @@
+ID,Award,GrammyYear,Genre,Album,Artist
+2,Best Pop Vocal Album,2018,Pop,Sweetener,Ariana Grande
+3,Best Dance/Electronic Album,2018,Dance/Electronic Music,Woman Worldwide,Justice
+9,Best Rap Album,2018,Rap,Invasion Of Privacy,Cardi B
+10,Best Country Album,2018,Country,Golden Hour,Kacey Musgraves
+16,Best Gospel Album,2018,Gospel/Contemporary Christian Music,Hiding Place,Tori Kelly
+21,Best Regional Mexican Music Album (Including Tejano),2018,Latin,¡México Por Siempre!,Luis Miguel
+25,Best Traditional Blues Album,2018,American Roots Music,The Blues Is Alive And Well,Buddy Guy
+27,Best Folk Album,2018,American Roots Music,All Ashore,Punch Brothers
+35,Best Album Notes,2018,Notes,Voices Of Mississippi: Artists And Musicians Documented By William Ferris,Bob Dylan
+37,"Best Engineered Album, Non-Classical",2018,"Production, Non-Classical",Colors,Charlie Puth
+44,Best Dance/Electronic Album,2017,Dance/Electronic Music,3-D The Catalogue,Kraftwerk
+46,Best Rock Album,2017,Rock,A Deeper Understanding,The War On Drugs
+47,Best Alternative Music Album,2017,Alternative,Sleep Well Beast,The National
+48,Best Urban Contemporary Album,2017,R&B,Starboy,The Weeknd
+66,Best Traditional Blues Album,2017,American Roots Music,Blue & Lonesome,The Rolling Stones
+67,Best Contemporary Blues Album,2017,American Roots Music,TajMo,Taj Mahal
+68,Best Folk Album,2017,American Roots Music,Mental Illness,Aimee Mann
+72,Best Children's Album,2017,Children's,Feel What U Feel,Lisa Loeb
+76,Best Album Notes,2017,Notes,Live At The Whisky A Go Go: The Complete Recordings,Otis Redding
+77,Best Historical Album,2017,Historical,Leonard Bernstein - The Composer,Leonard Bernstein
+85,Best Dance/Electronic Album,2016,Dance/Electronic Music,Skin,Flume
+87,Best Rock Album,2016,Rock,Tell Me I'm Pretty,Cage The Elephant
+89,Best Urban Contemporary Album,2016,R&B,Lemonade,Beyoncé
+91,Best Rap Album,2016,Rap,Coloring Book,Chance The Rapper
+94,Best Jazz Vocal Album,2016,Jazz,Take Me To The Alley,Gregory Porter
+95,Best Jazz Instrumental Album,2016,Jazz,Country For Old Men,John Scofield
+111,Best Reggae Album,2016,Reggae,Ziggy Marley,Ziggy Marley
+118,Best Historical Album,2016,Historical,"The Cutting Edge 1965-1966: The Bootleg Series, Vol.12 (Collector's Edition)",Bob Dylan
+165,Best Pop Vocal Album,2014,Pop,In The Lonely Hour,Sam Smith
+166,Best Dance/Electronic Album,2014,Dance/Electronic Music,Syro,Aphex Twin
+169,Best Alternative Music Album,2014,Alternative,St. Vincent,St. Vincent
+175,Best Jazz Vocal Album,2014,Jazz,Beautiful Life,Dianne Reeves
+183,"Best Latin Rock, Urban or Alternative Album",2014,Latin,Multiviral,Calle 13
+188,Best Blues Album,2014,American Roots Music,Step Back,Johnny Winter
+189,Best Folk Album,2014,American Roots Music,Remedy,Old Crow Medicine Show
+191,Best Reggae Album,2014,Reggae,Fly Rasta,Ziggy Marley
+197,Best Album Notes,2014,Notes,Offering: Live At Temple University,John Coltrane
+198,Best Historical Album,2014,Historical,"The Garden Spot Programs, 1950",Hank Williams
+200,Best Surround Sound Album,2014,"Production, Immersive Audio",Beyoncé,Beyoncé
+203,Album Of The Year,2013,General,Random Access Memories,Daft Punk
+204,Best Pop Instrumental Album,2013,Pop,Steppin' Out,Herb Alpert
+206,Best Dance/Electronica Album,2013,Dance/Electronic Music,Random Access Memories,Daft Punk
+207,Best Traditional Pop Vocal Album,2013,Traditional Pop,To Be Loved,Michael Bublé
+208,Best Rock Album,2013,Rock,Celebration Day,Led Zeppelin
+209,Best Alternative Music Album,2013,Alternative,Modern Vampires Of The City,Vampire Weekend
+213,Best Country Album,2013,Country,Same Trailer Different Park,Kacey Musgraves
+215,Best Jazz Vocal Album,2013,Jazz,Liquid Spirit,Gregory Porter
+225,Best Americana Album,2013,American Roots Music,Old Yellow Moon,Emmylou Harris
+227,Best Blues Album,2013,American Roots Music,Get Up!,Ben Harper
+230,Best Reggae Album,2013,Reggae,Ziggy Marley In Concert,Ziggy Marley
+231,Best World Music Album,2013,World Music,Live: Singing For Peace Around The World,Gipsy Kings
+236,Best Album Notes,2013,Notes,Afro Blue Impressions (Remastered & Expanded),John Coltrane
+237,Best Historical Album,2013,Historical,The Complete Sussex And Columbia Albums,Bill Withers
+238,"Best Engineered Album, Non-Classical",2013,"Production, Non-Classical",Random Access Memories,Daft Punk
+241,Album Of The Year,2012,General,Babel,Mumford & Sons
+242,Best Pop Instrumental Album,2012,Pop,Impressions,Chris Botti
+244,Best Dance/Electronica Album,2012,Dance/Electronic Music,Bangarang,Skrillex
+246,Best Rock Album,2012,Rock,El Camino,The Black Keys
+247,Best Alternative Music Album,2012,Alternative,Making Mirrors,Gotye
+248,Best Urban Contemporary Album,2012,R&B,Channel Orange,Frank Ocean
+251,Best Country Album,2012,Country,Uncaged,Zac Brown Band
+253,Best Jazz Vocal Album,2012,Jazz,Radio Music Society,Esperanza Spalding
+258,Best Contemporary Christian Music Album,2012,Gospel/Contemporary Christian Music,Eye On It,TobyMac
+263,Best Americana Album,2012,American Roots Music,Slipstream,Bonnie Raitt
+265,Best Blues Album,2012,American Roots Music,Locked Down,Dr. John
+268,Best Reggae Album,2012,Reggae,Rebirth,Jimmy Cliff
+274,Best Album Notes,2012,Notes,Singular Genius: The Complete ABC Singles,Ray Charles
+275,Best Historical Album,2012,Historical,The Smile Sessions (Deluxe Box Set),The Beach Boys
+282,Best Dance/Electronica Album,2011,Dance/Electronic Music,Scary Monsters And Nice Sprites,Skrillex
+284,Best Rock Album,2011,Rock,Wasting Light,Foo Fighters
+285,Best Alternative Music Album,2011,Alternative,Bon Iver,Bon Iver
+288,Best Country Album,2011,Country,Own The Night,Lady Antebellum
+289,Best New Age Album,2011,New Age,What's It All About,Pat Metheny
+294,Best Contemporary Christian Music Album,2011,Gospel/Contemporary Christian Music,And If Our God Is For Us...,Chris Tomlin
+295,"Best Latin Pop, Rock, Or Urban Album",2011,Latin,Drama Y Luz,Maná
+300,Best Bluegrass Album,2011,American Roots Music,Paper Airplane,Alison Krauss & Union Station
+302,Best Folk Album,2011,American Roots Music,Barton Hollow,The Civil Wars
+304,Best Reggae Album,2011,Reggae,Revelation Pt. 1: The Root Of Life,Stephen Marley
+305,Best World Music Album,2011,World Music,Tassili,Tinariwen
+312,"Best Engineered Album, Non-Classical",2011,"Production, Non-Classical",Paper Airplane,Alison Krauss & Union Station
+315,Album Of The Year,2010,General,The Suburbs,Arcade Fire
+318,Best Electronic/Dance Album,2010,Dance/Electronic Music,La Roux,La Roux
+319,Best Traditional Pop Vocal Album,2010,Traditional Pop,Crazy Love,Michael Bublé
+320,Best Rock Album,2010,Rock,The Resistance,Muse
+325,Best Country Album,2010,Country,Need You Now,Lady Antebellum
+332,Best Rock Or Rap Gospel Album,2010,Gospel/Contemporary Christian Music,Hello Hurricane,Switchfoot
+334,"Best Southern, Country, Or Bluegrass Gospel Album",2010,Gospel/Contemporary Christian Music,The Reason,Diamond Rio
+335,Best Traditional Gospel Album,2010,Gospel/Contemporary Christian Music,Downtown Church,Patty Griffin
+346,Best Contemporary Blues Album,2010,American Roots Music,Living Proof,Buddy Guy
+352,Best Reggae Album,2010,Reggae,Before The Dawn,Buju Banton
+356,Best Spoken Word Album For Children,2010,Children's,"Julie Andrews' Collection Of Poems, Songs, And Lullabies",Julie Andrews
+361,"Best Score Soundtrack Album For Motion Picture, Television Or Other Visual Media",2010,Composing/Arranging,Toy Story 3,Randy Newman
+362,Best Album Notes,2010,Notes,Keep An Eye On The Sky,Big Star
+363,Best Historical Album,2010,Historical,The Beatles (The Original Studio Recordings),The Beatles
