@@ -1,13 +1,14 @@
 # MusicGraph
 ## Abstract -
+<p>This application provides knowledge and information about music artists, specifically about the songs they have sung, genre of their songs, any Grammy Awards they have won, their popularity, country of origin, etc. It also captures the knowledge and information regarding the top trending songs in online streaming applications like spotify along with their inherent properties.</p>
 
 ## 1.Data Collection-<br />
 <p> All the data resides in directory Data which includes - <br/>
   <ul>
-    <li>Artist.csv - Data about music artists from different countries.</li>
-    <li>spotify.csv - Top trending songs on spotify.</li>
-    <li>GrammySongs.csv - Grammy Award winning songs.</li>
-    <li>GrammyAlbums.csv - Grammy Award winning albums.</li>
+    <li>Data about music artists from different countries.</li>
+    <li>Top trending songs on spotify.</li>
+    <li>Grammy Award winning songs.</li>
+    <li>Grammy Award winning albums.</li>
   </ul>
 </p>
 
