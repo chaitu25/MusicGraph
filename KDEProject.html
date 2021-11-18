@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="KDEProject.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+	<script src="KDEProject.js"></script>
+	<title>Knowledge and Data Engineering Group Project</title>
+</head>
+<body>
+<div>
+	<h1 class="top-title"> Knowledge and Data Engineering Group Project</h1>
+</div>
+<div class="table"> 
+<table>
+	<thead>
+		<tr class="table-primary">
+			<h3 class="table-head">PREFIXES USED</h3>
+		</tr>
+		<hr />
+	</thead>
+	<tbody>
+		<tr><p class="table-head">PREFIX mo: &lthttp://purl.org/ontology/mo/&gt</p></tr>
+		<tr><p class="table-head">PREFIX dc: &lthttp://purl.org/dc/elements/1.1/&gt</p></tr>
+		<tr><p class="table-head">PREFIX xsd: &lthttp://www.w3.org/2001/XMLSchema#&gt</p></tr>
+				<tr><p class="table-head">PREFIX ex: &lthttp://data.example.org/&gt</p></tr>
+		<tr><p class="table-head">PREFIX foaf: &lthttp://xmlns.com/foaf/0.1/&gt</p></tr>
+		<tr><p class="table-head">PREFIX music: &lthttp://www.music.org/ontologies/music#&gt</p></tr>
+	</tbody>
+</table>
+</div>
+<div>
+	<div>
+		<button id="ques1-button" onclick="clicking('ques1-text','ques1-button','query1-text','result1-query')">Question 1</button>
+		<div id="ques1-text">What Grammy Award winning songs were also top spotify songs in the year 2016?
+        <button id="query1-button" onclick="clickingQuery('query1-text','query1-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query1-text">select distinct ?Song ?Artist (str(?year) as ?Year)
+where {
+    ?award a music:GrammyAward;
+           music:awardedFor ?Song;
+           music:awardYear ?year;
+           music:awardedTo ?artist;
+           music:awardTitle ?GrammyAward.
+    ?artist foaf:name ?Artist.
+    Filter(str(?year)="2016").
+    {SELECT ?Song
+    where{
+    	?track a mo:Track;
+    		music:title ?Song.
+    }}
+}
+
+     <button id="run-query1-button" onclick="runningQuery('result1-query','run-query1-button')">RUN QUERY</button>
+		</div>
+		<div id="result1-query">my(table1,query1)</div>
+	
+
+
+	<button id="ques2-button" onclick="clicking('ques2-text','ques2-button','query2-text','result2-query')">Question 2</button>
+		<div id="ques2-text">What top Spotify songs in the year 2018 were made by artists from the United States?
+        <button id="query2-button" onclick="clickingQuery('query2-text','query2-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query2-text">SELECT distinct	?Track ?Artist (str(?year) as ?Year) ?Country
+WHERE	{	
+	?track a mo:Track;
+            music:title ?Track;
+            music:sungBy ?artist;
+            music:year ?year.
+    ?artist foaf:name ?Artist.
+    ?artist music:country ?Country.
+    Filter(?Year="2018" && ?Country="United States").
+}
+
+     <button id="run-query2-button" onclick="runningQuery('result2-query','run-query2-button')">RUN QUERY</button>
+		</div>
+		<div id="result2-query">my(table2,query2)</div>
+
+
+	<button id="ques3-button" onclick="clicking('ques3-text','ques3-button','query3-text','result3-query')">Question 3</button>
+		<div id="ques3-text">Find the danceability of the song that won “Record Of The Year” in 2011.
+        <button id="query3-button" onclick="clickingQuery('query3-text','query3-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query3-text">SELECT distinct	?Song ?Artist ?Award (str(?year) as ?Year) ?danceability
+WHERE	{
+    ?award a music:GrammyAward;
+           music:awardedFor ?Song;
+           music:awardYear ?year;
+           music:awardedTo ?artist;
+           music:awardTitle ?Award.
+    ?artist foaf:name ?Artist.
+    filter(?Award='Record Of The Year' && str(?year)='2011')
+        {SELECT ?Song ?danceability
+    where{
+    	?track a mo:Track;
+    		music:title ?Song;
+            music:dancability ?danceability.
+    }}
+} 
+
+       <button id="run-query3-button" onclick="runningQuery('result3-query','run-query3-button')">RUN QUERY</button>
+		</div>
+		<div id="result3-query">my(table3,query3)</div>
+
+		<button id="ques4-button" onclick="clicking('ques4-text','ques4-button','query4-text','result4-query')" >Question 4</button>
+		<div id="ques4-text">How many FM listeners does the artist who won “Best Pop Solo Performance” in 2017 have?
+        <button id="query4-button" onclick="clickingQuery('query4-text','query4-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query4-text">SELECT ?Grammy ?Artist (str(?year) as ?Year) ?Track ?FM_Listeners
+WHERE	{	
+    ?awardType a music:GrammyAward;
+            music:awardTitle ?Grammy;
+            music:awardedTo ?artist;
+            music:awardYear ?year;
+            music:awardedFor ?Track.
+    ?artist foaf:name ?Artist.
+    ?artist music:listeners ?FM_Listeners
+    Filter(?Grammy="Best Pop Solo Performance" && ?Year='2017').
+}
+
+       <button id="run-query4-button" onclick="runningQuery('result4-query','run-query4-button')">RUN QUERY</button>
+		</div>
+		<div id="result4-query">my(table4,query4)</div>
+
+		<button id="ques5-button" onclick="clicking('ques5-text','ques5-button','query5-text','result5-query')" >Question 5</button>
+		<div id="ques5-text">Find the bpm of the song that won “Song of the Year” in the year 2016?
+        <button id="query5-button" onclick="clickingQuery('query5-text','query5-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query5-text">SELECT distinct	?Song ?Artist (str(?bpm) as ?BPM) ?Award (str(?year) as ?Year)
+WHERE	{
+    ?award a music:GrammyAward;
+           music:awardedFor ?Song;
+           music:awardYear ?year;
+           music:awardedTo ?artist;
+           music:awardTitle ?Award.
+    ?artist foaf:name ?Artist.
+    filter(?Award='Song Of The Year' && str(?year)='2016')
+        {SELECT ?Song ?bpm
+    where{
+    	?track a mo:Track;
+    		music:title ?Song;
+            music:bpm ?bpm.
+    }}
+} limit 1
+
+       <button id="run-query5-button" onclick="runningQuery('result5-query','run-query5-button')">RUN QUERY</button>
+		</div>
+		<div id="result5-query">my(table5,query5)</div>
+      
+      	<button id="ques6-button" onclick="clicking('ques6-text','ques6-button','query6-text','result6-query')" >Question 6</button>
+		<div id="ques6-text">Find 5 Grammy Award winning songs that have a bpm higher than 100.
+        <button id="query6-button" onclick="clickingQuery('query6-text','query6-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query6-text">SELECT distinct	?Song ?Artist (str(?bpm) as ?BPM)
+WHERE	{
+    ?award a music:GrammyAward;
+           music:awardedFor ?Song;
+           music:awardYear ?year;
+           music:awardedTo ?artist;
+           music:awardTitle ?Award.
+    ?artist foaf:name ?Artist.
+        {SELECT ?Song ?bpm
+    where{
+    	?track a mo:Track;
+    		music:title ?Song;
+            music:bpm ?bpm.
+            filter(?bpm > 100)
+    }}
+} order by asc(?bpm) limit 5
+
+       <button id="run-query6-button" onclick="runningQuery('result6-query','run-query6-button')">RUN QUERY</button>
+		</div>
+		<div id="result6-query">my(table6,query6)</div>
+
+			<button id="ques7-button" onclick="clicking('ques7-text','ques7-button','query7-text','result7-query')" >Question 7</button>
+		<div id="ques7-text">Find 5 songs written by singers from the United States that have an energy higher than 70.
+        <button id="query7-button" onclick="clickingQuery('query7-text','query7-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query7-text">SELECT ?Singer ?Song ?Energy
+WHERE	{	
+    ?singer a music:Singer;
+            foaf:name ?Singer;
+            music:country ?Country.
+    filter(?Country='United States')
+    {SELECT ?Energy ?Song ?singer
+        WHERE {
+            ?song music:sungBy ?singer;
+                  music:energy ?Energy;
+                  music:title ?Song.
+            filter(?Energy > 70)
+        } 
+    }
+} limit 10
+
+       <button id="run-query7-button" onclick="runningQuery('result7-query','run-query7-button')">RUN QUERY</button>
+		</div>
+		<div id="result7-query">my(table7,query7)</div>
+
+			<button id="ques8-button" onclick="clicking('ques8-text','ques8-button','query8-text','result8-query')" >Question 8</button>
+		<div id="ques8-text">Get the top songs of the artist with the most FM Listeners.
+        <button id="query8-button" onclick="clickingQuery('query8-text','query8-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query8-text">SELECT	?name ?Artist
+WHERE	{
+    ?song ex:sungBy ?artist;
+          dc:title ?name.
+    {
+        SELECT ?Artist 
+        WHERE	{
+            ?artist ex:noOfListerns ?noOfListerns;
+                    foaf:name ?Artist.
+        } ORDER BY DESC(xsd:integer(?noOfListerns)) LIMIT 1
+    }
+    ?artist foaf:name ?Artist
+}
+
+       <button id="run-query8-button" onclick="runningQuery('result8-query','run-query8-button')">RUN QUERY</button>
+		</div>
+		<div id="result8-query">my(table8,query8)</div>
+
+			<button id="ques9-button" onclick="clicking('ques9-text','ques9-button','query9-text','result9-query')" >Question 9</button>
+		<div id="ques9-text">Find 10 songs with the same genre as the song that won “Best Pop Solo Performance” in 2016?
+        <button id="query9-button" onclick="clickingQuery('query9-text','query9-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query9-text">select distinct ?Song ?Genre (str(?year) as ?Year)
+where {
+    ?grammy a music:GrammyAward;
+            music:awardTitle ?Award;
+            mo:Genre ?Genre;
+            music:awardYear ?grammyYear.
+            Filter(str(?grammyYear)="2016" && ?Award="Best Pop Solo Performance")
+    bind (?Genre as ?GrammyGenre)
+    {select ?Song ?Genre ?year
+        where {
+            ?song a mo:Track;
+                  music:year ?year;
+                  music:title ?Song;
+                  mo:Genre ?GrammyGenre.
+        }
+    }
+} limit 10
+
+       <button id="run-query9-button" onclick="runningQuery('result9-query','run-query9-button')">RUN QUERY</button>
+		</div>
+		<div id="result9-query">my(table9,query9)</div>
+
+	<button id="ques10-button" onclick="clicking('ques10-text','ques10-button','query10-text','result10-query')" >Question 10</button>
+		<div id="ques10-text">What other artist/s released songs the same year that Kendrick Lamar won “Best Rap Song”?
+        <button id="query10-button" onclick="clickingQuery('query10-text','query10-button')">DISPLAY QUERY</button>
+		</div>
+		<div id="query10-text">SELECT distinct ?Artist (str(?year) as ?Year)
+WHERE{
+    ?song mo:Genre ?genre;
+          dc:title ?name;
+          ex:sungBy ?artist;
+          dc:date ?year.
+    {
+    select (str(?year) as ?Year_Exp)
+        where {
+            ?award a mo:Award;
+                   ex:awardedTo 'Kendrick Lamar';
+                   dc:title 'Best Rap Song';
+                   dc:date ?year.
+        }
+    }
+    FILTER(str(?year) = ?Year_Exp).
+    ?artist foaf:name ?Artist
+}
+
+       <button id="run-query10-button" onclick="runningQuery('result10-query','run-query10-button')">RUN QUERY</button>
+		</div>
+		<div id="result10-query">my(table10,query10)</div>
+
+		</div>
+
+
+	</div>
+	</div>
+</body>
+</html>
